@@ -1,17 +1,17 @@
 package com.yash.dictionary.feature_dictionary.data.remote.dto
 
-import com.yash.dictionary.feature_dictionary.domain.model.WordInfo
+import com.yash.dictionary.feature_dictionary.data.local.entity.WordInfoEntity
 
 data class WordInfoDto(
-    val meaning: List<MeaningDto>,
+    val meanings: List<MeaningDto>,
     val origin: String,
     val phonetic: String,
     val phonetics: List<PhoneticDto>,
     val word: String
 ) {
-    fun toWordInfoEntity(): WordInfo {
-        return WordInfo(
-            meanings = meaning.map { it.toMeaning() },
+    fun toWordInfoEntity(): WordInfoEntity {
+        return WordInfoEntity(
+            meanings = meanings.map { it.toMeaning() },
             origin = origin,
             phonetic = phonetic,
             word = word
